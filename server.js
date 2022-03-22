@@ -15,6 +15,10 @@ io.on('connection', socket => {
     console.log('new connection');
 
     socket.emit('message', 'welcome to chat')
+
+    socket.on('speechRecognized', text => {
+        console.log(text);
+    })
 });
   
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
